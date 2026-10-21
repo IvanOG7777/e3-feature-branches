@@ -1,3 +1,5 @@
+import hatImage from "./assets/hat.png";
+import sunglassesImage from "./assets/sunglasses.png";
 const portrait = document.querySelector<HTMLDivElement>("#portrait")!;
 const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 
@@ -5,7 +7,10 @@ const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute(
+  "aria-label",
+  "A character wearing a hat and sunglasses",
+);
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
@@ -58,6 +63,32 @@ mouth.setAttribute("stroke", "#302c29");
 mouth.setAttribute("stroke-width", "4");
 mouth.setAttribute("stroke-linecap", "round");
 face.append(mouth);
+
+// Add a hat to the character
+const hat = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
+
+hat.setAttribute("href", hatImage);
+hat.setAttribute("x", "35");
+hat.setAttribute("y", "0");
+hat.setAttribute("width", "130");
+hat.setAttribute("height", "60");
+face.append(hat);
+
+// Add sunglasses over the character's eyes
+const sunglasses = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
+
+sunglasses.setAttribute("href", sunglassesImage);
+sunglasses.setAttribute("x", "48");
+sunglasses.setAttribute("y", "65");
+sunglasses.setAttribute("width", "104");
+sunglasses.setAttribute("height", "40");
+face.append(sunglasses);
 
 portrait.append(face);
 
