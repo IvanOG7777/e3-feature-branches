@@ -26,3 +26,10 @@ Status: explored
 changed the face to use a light blue-to-purple gradient and replaced the straight mouthwith a curved smile using a Bézier curve. This made the character look happier and more expressive.
 
 All three varients have their own branches
+
+Final decision:
+
+I choose the alternative C - Colors and Curves
+I choose this becasue I liked it the most out of all of them. Compared to Alternative A's halo of circles and Alternative B's hat and sunglasses, Alternative C changes the character's expression while keeping the overall design simple.
+
+Alternatives A and B will remain on their separate branches as records of the other designs I explored.
