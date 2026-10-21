@@ -5,7 +5,10 @@ const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute(
+  "aria-label",
+  "A neutral character surrounded by a halo of 120 circles",
+);
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
@@ -58,6 +61,22 @@ mouth.setAttribute("stroke", "#302c29");
 mouth.setAttribute("stroke-width", "4");
 mouth.setAttribute("stroke-linecap", "round");
 face.append(mouth);
+
+for (let i = 0; i < 120; i++) {
+  const angle = (i / 120) * Math.PI * 2;
+
+  const circle = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "circle",
+  );
+
+  circle.setAttribute("cx", String(100 + 90 * Math.cos(angle)));
+  circle.setAttribute("cy", String(100 + 90 * Math.sin(angle)));
+  circle.setAttribute("r", "2");
+  circle.setAttribute("fill", "#563b67");
+
+  face.append(circle);
+}
 
 portrait.append(face);
 
